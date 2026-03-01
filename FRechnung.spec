@@ -1,6 +1,6 @@
-# invoice_master.spec
+# FRechnung.spec
 # PyInstaller-Konfiguration für FRechnung
-# Ausführen mit: pyinstaller invoice_master.spec
+# Ausführen mit: pyinstaller FRechnung.spec
 
 import os
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
