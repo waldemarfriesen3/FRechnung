@@ -79,7 +79,7 @@ def upload_logo():
     name = data.get("name", "logo.png")
     try:
         # Speichern neben der exe / im AppData-Ordner
-        save_dir = os.path.join(os.path.expanduser("~"), "InvoiceMaster")
+        save_dir = os.path.join(os.path.expanduser("~"), "FRechnung")
         os.makedirs(save_dir, exist_ok=True)
         path = os.path.join(save_dir, name)
         with open(path, "wb") as f:
@@ -132,7 +132,7 @@ def save_pdf():
     payload   = request.get_json()
     b64       = payload.get("pdf_base64", "")
     filename  = payload.get("filename", "Rechnung.pdf")
-    save_dir  = os.path.join(os.path.expanduser("~"), "InvoiceMaster", "Rechnungen")
+    save_dir  = os.path.join(os.path.expanduser("~"), "FRechnung", "Rechnungen")
     os.makedirs(save_dir, exist_ok=True)
     path = os.path.join(save_dir, filename)
     try:

@@ -18,12 +18,12 @@ def _get_config_path(filename: str = "config.json") -> str:
     
     Speicherort:
       - Normal:      neben der config_manager.py
-      - Als .exe:    %USERPROFILE%/InvoiceMaster/config.json
+      - Als .exe:    %USERPROFILE%/FRechnung/config.json
                      (da _MEIPASS ein temporäres Verzeichnis ist)
     """
     if hasattr(sys, "_MEIPASS"):
         # Als gebündelte .exe → AppData-ähnlicher Ordner im Benutzerverzeichnis
-        base = os.path.join(os.path.expanduser("~"), "InvoiceMaster")
+        base = os.path.join(os.path.expanduser("~"), "FRechnung")
     else:
         # Normaler Betrieb → neben dieser Datei
         base = os.path.dirname(os.path.abspath(__file__))
