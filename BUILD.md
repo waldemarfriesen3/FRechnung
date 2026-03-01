@@ -69,7 +69,7 @@ dist/InvoiceMaster.exe
 
 Alle Daten werden im Benutzerordner gespeichert:
 ```
-C:\Users\<Name>\InvoiceMaster\
+C:\Users\<Name>\FRechnung\
 ├── Rechnungen\          ← Gespeicherte PDFs
 ├── logo.png             ← Firmenlogo (nach Upload)
 └── config.json          ← Firmeneinstellungen (von config_manager)
