@@ -34,7 +34,7 @@ config_manager = ConfigManager()
 @app.route("/")
 def index():
     html_path = os.path.join(FRONTEND_DIR, "index.html")
-    with open(html_path, "r", encoding="utf-8") as f:
+    with open(html_path, "r", encoding="utf-8-sig", errors="replace") as f:
         html = f.read()
     # In der Cloud gibt es keinen zufälligen Port — Platzhalter einfach leer lassen
     html = html.replace("__APP_PORT__", "")
@@ -153,6 +153,10 @@ def save_pdf():
 
 # ── Einstiegspunkt ────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    # Railway setzt $PORT automatisch — fallback auf 8080
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    if os.environ.get("FLASK_LOCAL"):
+        # Lokaler Modus: nur localhost, Port 5000
+        app.run(host="127.0.0.1", port=5000, debug=False)
+    else:
+        # Railway/Cloud: alle Adressen, Port aus Umgebungsvariable
+        port = int(os.environ.get("PORT", 8080))
+        app.run(host="0.0.0.0", port=port, debug=False)
