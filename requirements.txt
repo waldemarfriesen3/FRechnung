@@ -9,3 +9,5 @@ pyinstaller>=6.0.0
 # PDF-Generierung (bereits in deinem Projekt vorhanden)
 reportlab>=4.0.0
 Pillow>=10.0.0
+cryptography
+keyring

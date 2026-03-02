@@ -9,3 +9,4 @@ venv/
 build.ps1
 config.json
 templates/
+user_profile.dat
