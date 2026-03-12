@@ -1,17 +1,18 @@
 # FRechnung
 
-> Rechnungserstellung mit ZUGFeRD 2.2 / Factur-X Basic — EN 16931 konform
+> Rechnungserstellung mit ZUGFeRD 2.3.3 / Factur-X Basic — EN 16931 konform · PDF/A-3b
 
 ---
 
 ## Übersicht
 
-**FRechnung** ist eine Desktop-Anwendung zur einfachen und professionellen Erstellung von Rechnungen als PDF. Die generierten PDFs enthalten eingebettetes maschinenlesbares XML nach dem **ZUGFeRD 2.2 / Factur-X Basic**-Standard, vollständig konform zur europäischen Norm **EN 16931**.
+**FRechnung** ist eine Desktop-Anwendung zur einfachen und professionellen Erstellung von Rechnungen als PDF. Die generierten PDFs enthalten eingebettetes maschinenlesbares XML nach dem **ZUGFeRD 2.3.3 / Factur-X Basic**-Standard, vollständig konform zur europäischen Norm **EN 16931**. Das erzeugte Dokument entspricht dem Archivformat **PDF/A-3b (ISO 19005-3)**.
 
 ### Highlights
-   
+
 - Elegante PDF-Rechnungen in **22 wählbaren Design-Themen**
-- **EN 16931 konformes XML** eingebettet (ZUGFeRD 2.2 / Factur-X Basic)
+- **EN 16931 konformes XML** eingebettet (ZUGFeRD 2.3.3 / Factur-X Basic)
+- **PDF/A-3b** konformes Ausgabeformat (ISO 19005-3) — langzeitarchivierbar
 - **B2C-, B2B- und B2G-Modus** — je nach Rechnungsart werden die passenden Pflicht- und Optionalfelder eingeblendet
 - Integrierter **PDF-Viewer** mit Zoom, Seitennavigation und Scrollen
 - Persistente Einstellungen für Firmendaten und Bankverbindung
@@ -43,7 +44,7 @@ DejaVuSans-Bold.ttf
 
 Download: [dejavu-fonts.github.io](https://dejavu-fonts.github.io/)
 
-Ohne diese Dateien verwendet die Anwendung automatisch Helvetica als Fallback.
+Ohne diese Dateien verwendet die Anwendung automatisch Helvetica als Fallback (€ wird dann als „EUR" dargestellt).
 
 ---
 
@@ -160,8 +161,9 @@ Bei Auswahl des Modus **B2G** werden zusätzliche Pflicht- und Optionalfelder ei
 
 Die generierten PDFs enthalten eine eingebettete Datei `factur-x.xml` gemäß:
 
-- **Profil:** Factur-X Basic / ZUGFeRD 2.2 Basic
+- **Standard:** ZUGFeRD 2.3.3 / Factur-X Basic
 - **Norm:** EN 16931 (europäische E-Rechnungsnorm)
+- **Archivformat:** PDF/A-3b (ISO 19005-3) — langzeitarchivierungsfähig
 - **Zahlungsart:** TypeCode `58` = SEPA-Überweisung (korrekt nach EN 16931)
 - **Pflichtfelder enthalten:**
   - Rechnungsnummer, Datum, Lieferdatum
@@ -172,9 +174,9 @@ Die generierten PDFs enthalten eine eingebettete Datei `factur-x.xml` gemäß:
   - Zahlungsbedingungen mit berechnetem Fälligkeitsdatum
   - IBAN und BIC im Zahlungsmittelblock
 - **B2B-Felder:** Bestellnummer (`BuyerOrderReferencedDocument`), Käuferreferenz, Kunden-USt-ID
-- **B2G-Felder:** Leitweg-ID als `BuyerReference` (BT-10, Pflicht), Vertragsnummer, Kostenstelle
+- **B2G-Felder:** Leitweg-ID als `BuyerReference` (BT-10, Pflicht)
 
-> Zur Validierung des XML kann [Mustang Project Validator](https://www.mustangproject.org/) oder [Factur-X Validator](https://factur-x.io/) verwendet werden.
+> Zur Validierung des XML kann [Mustang Project Validator](https://www.mustangproject.org/) oder der [Factur-X Validator](https://factur-x.io/) verwendet werden.
 
 ---
 
